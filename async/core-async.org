@@ -1,0 +1,30 @@
+* Tour of core.async 
+** Definition
+" channels as ways of co-ordinating concurrent processes "
+
+"Channels are co-ordination primitives not data structures. Simply
+because a lazy seq looks like a channel, doesn't mean that they should
+be treated as such. ..."
+
+- Timothy Baldbridge https://groups.google.com/forum/#!topic/clojure/pF9FEP7b77U
+** UI Clojurescript
+  - David Nolen's series : [[http://swannodette.github.io/2013/08/17/comparative/][UI Autocompleter]]
+  - Games : [[http://ragnard.github.io/2013/10/01/clojurecup-pong-async.html][Torus Pong]] by Ragnar Dahlén  [[http://rigsomelight.com/2013/08/12/clojurescript-core-async-dots-game.html][Dots Game]] by Bruce Hauman
+** Back-end JVM
+  - [[http://martintrojer.github.io/clojure/2013/07/07/coreasync-and-blocking-io/][core.async and Blocking IO]] by Martin Trojer
+  - Go translations by Martin Trojer
+  - [[https://gist.github.com/halgari/6309500][load-balancing in core.async]] by Timothy Baldridge
+  - [[http://blog.malcolmsparks.com/?p=134][MQTT with core.async]] by Malcom Sparks 
+    https://gist.github.com/malcolmsparks/6044878
+** Internals 
+**** The State Machines
+   - [[http://hueypetersen.com/posts/2013/08/02/the-state-machines-of-core-async/][The State Machines of core.async]] 
+#+BEGIN_SRC
+(ns clojure.core.async.impl.ioc-macros)
+(clojure.pprint/pprint (state-machine '(let [c (chan)] (go (<! c 5))) 1 {} {}))
+#+END_SRC
+**** Macro and Compiler 
+   - Timothy Baldriger one of core.async developer screencast
+** Usage and Questions
+   - Can core.async replace a Message Queuing System ?
+

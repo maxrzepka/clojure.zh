@@ -1,4 +1,3 @@
-clojure.zh
+clojure.zh : Clojure Zürich User Group 
 ==========
 
-Clojure Zürich User Group Meetup Material
